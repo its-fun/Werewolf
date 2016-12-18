@@ -51,58 +51,79 @@
 </head>
 
 <body>
-<div class= "noticeTitle">
-    <h2 >请配置角色</h2>
-</div>
-<ul class="mainmenu">
-    <li class="mli" ><div class = "liDIv"><b class = "liB"><img class="identityImg" src="images/lang.jpg" /></b>
-            <div class="liSpan">
-                <span class="inSpan">狼人</span><input name="langrenNum" type="number" min="0" max="10" value="2"/>
-            </div>
+    <div class= "noticeTitle">
+        <h2 >请配置角色</h2>
+    </div>
+    <form id="createRoomForm" action="" method="post">
+        <ul class="mainmenu">
+            <li class="mli" ><div class = "liDIv"><b class = "liB"><img class="identityImg" src="images/lang.jpg" /></b>
+                    <div class="liSpan">
+                        <span class="inSpan">狼人</span><input name="langrenNum" type="number" min="0" max="10" value="2"/>
+                    </div>
+                </div>
+            </li>
+            <li class="mli" ><div class = "liDIv"><b class = "liB" ><img class="identityImg" src="images/cunmin.jpg" /></b>
+                <div class="liSpan">
+                    <span class="inSpan">普通村民</span> <input name="cunminNum" type="number" min="0" max="10" value="2"/>
+                </div></div></li>
+            <li class="mli" ><div class = "liDIv"><b class = "liB" ><img class="identityImg" src="images/yuyanjia.jpg" /></b>
+                <div class="liSpan">
+                    <span class="inSpan">预言家</span><input name="yuyanjiaNum" type="number" min="0" max="1" value="1"/>
+                </div></div></li>
+            <li class="mli" ><div class = "liDIv"><b class = "liB" ><img class="identityImg" src="images/nvwu.jpg" /></b>
+                <div class="liSpan">
+                    <span class="inSpan">女巫</span><input name="nvwuNum" type="number" min="0" max="1" value="1"/>
+                </div></div></li>
+            <li class="mli" ><div class = "liDIv"><b class = "liB" ><img class="identityImg" src="images/lieren.jpg" /></b>
+                <div class="liSpan">
+                    <span class="inSpan">猎人</span><input name="lierenNum" type="number" min="0" max="0" value="1"/>
+                </div></div></li>
+            <li class="mli" ><div class = "liDIv"><b class = "liB" ><img class="identityImg" src="images/shouwei.jpg" /></b>
+                <div class="liSpan">
+                    <span class="inSpan">守卫</span><input name="shouweiNum" type="number" min="0" max="0"  value="1"/>
+                </div></div></li>
+            <li class="mli" ><div class = "liDIv"><b class = "liB" ><img class="identityImg" src="images/baichi.jpg" /></b>
+                <div class="liSpan">
+                    <span class="inSpan">白痴</span><input name="baichiNum" type="number" min="0" max="1" value="1"/>
+                </div></div></li>
+            <li class="mli" ><div class = "liDIv"><b class = "liB" ><img class="identityImg" src="images/daozei.jpg" /></b>
+                <div class="liSpan">
+                    <span class="inSpan">盗贼</span><input name="daozeiNum" type="number" min="0" max="0" value="1"/>
+                </div></div></li>
+            <li class="mli" ><div class = "liDIv"><b class = "liB" ><img class="identityImg" src="images/qiubite.jpg" /></b>
+                <div class="liSpan">
+                    <span class="inSpan">丘比特</span><input name="qiubiteNum" type="number" min="0" max="0" value="1"/>
+                </div></div></li>
+            <li class="mli" ><div class = "liDIv"><b class = "liB" ><img class="identityImg" src="images/yehaizi.jpg" /></b>
+                <div class="liSpan">
+                    <span class="inSpan">野孩子</span><input name="yehaiziNum" type="number" min="0" max="0" value="1"/>
+                </div></div></li>
+        </ul>
+
+        <div class="underDiv">
+            <input id="createRoomBtn" type="button" class="btn btn-large btn-primary btn-block" onclick="">确认创建</input>
         </div>
-    </li>
-    <li class="mli" ><div class = "liDIv"><b class = "liB" ><img class="identityImg" src="images/cunmin.jpg" /></b>
-        <div class="liSpan">
-            <span class="inSpan">普通村民</span> <input name="cunminNum" type="number" min="0" max="10" value="2"/>
-        </div></div></li>
-    <li class="mli" ><div class = "liDIv"><b class = "liB" ><img class="identityImg" src="images/yuyanjia.jpg" /></b>
-        <div class="liSpan">
-            <span class="inSpan">预言家</span><input name="yuyanjiaNum" type="number" min="0" max="1" value="1"/>
-        </div></div></li>
-    <li class="mli" ><div class = "liDIv"><b class = "liB" ><img class="identityImg" src="images/nvwu.jpg" /></b>
-        <div class="liSpan">
-            <span class="inSpan">女巫</span><input name="nvwuNum" type="number" min="0" max="1" value="1"/>
-        </div></div></li>
-    <li class="mli" ><div class = "liDIv"><b class = "liB" ><img class="identityImg" src="images/lieren.jpg" /></b>
-        <div class="liSpan">
-            <span class="inSpan">猎人</span><input name="lierenNum" type="number" min="0" max="0" value="1"/>
-        </div></div></li>
-    <li class="mli" ><div class = "liDIv"><b class = "liB" ><img class="identityImg" src="images/shouwei.jpg" /></b>
-        <div class="liSpan">
-            <span class="inSpan">守卫</span><input name="shouweiNum" type="number" min="0" max="0"  value="1"/>
-        </div></div></li>
-    <li class="mli" ><div class = "liDIv"><b class = "liB" ><img class="identityImg" src="images/baichi.jpg" /></b>
-        <div class="liSpan">
-            <span class="inSpan">白痴</span><input name="baichiNum" type="number" min="0" max="1" value="1"/>
-        </div></div></li>
-    <li class="mli" ><div class = "liDIv"><b class = "liB" ><img class="identityImg" src="images/daozei.jpg" /></b>
-        <div class="liSpan">
-            <span class="inSpan">盗贼</span><input name="daozeiNum" type="number" min="0" max="0" value="1"/>
-        </div></div></li>
-    <li class="mli" ><div class = "liDIv"><b class = "liB" ><img class="identityImg" src="images/qiubite.jpg" /></b>
-        <div class="liSpan">
-            <span class="inSpan">丘比特</span><input name="qiubiteNum" type="number" min="0" max="0" value="1"/>
-        </div></div></li>
-    <li class="mli" ><div class = "liDIv"><b class = "liB" ><img class="identityImg" src="images/yehaizi.jpg" /></b>
-        <div class="liSpan">
-            <span class="inSpan">野孩子</span><input name="yehaiziNum" type="number" min="0" max="0" value="1"/>
-        </div></div></li>
+    </form>
 
-</ul>
-
-<div class="underDiv">
-    <a href="createRoomSuc.jsp" type="button" class="btn btn-large btn-primary btn-block" >确认创建</a>
-</div>
-<script src="http://cdn.bootcss.com/jquery/1.11.1/jquery.min.js"></script>
+    <script src="http://cdn.bootcss.com/jquery/1.11.1/jquery.min.js"></script>
+    <script type="text/javascript">
+        $(function(){
+            $("#createRoomBtn").click(function(){
+                $.ajax({
+                    url:"/Werewolf/pages/createRome.do",
+                    type:"post",
+                    dataType:"text",
+                    data: "createParas:" + JSON.stringify($("createRoomForm").serializeArray()),
+                    contentType:"application/json",
+                    success:function(data){
+                        alert(data);
+                    },
+                    error:function(){
+                        alert("创建房间失败，请重新创建");
+                    }
+                });
+            });
+        });
+    </script>
 </body>
 </html>
