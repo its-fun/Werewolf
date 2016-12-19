@@ -9,7 +9,6 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
 import javax.servlet.http.HttpServletRequest;
-import javax.servlet.http.HttpServletResponse;
 import net.sf.json.JSONObject;
 import org.springframework.web.bind.annotation.ResponseBody;
 
@@ -25,7 +24,7 @@ public class CreateRoomController {
 
     @RequestMapping(value = "/pages/createRomeSubmit" ,method = RequestMethod.POST)
     @ResponseBody
-    public String createRoom(HttpServletRequest request, HttpServletResponse response){
+    public String createRoom(HttpServletRequest request){
         try {
             String str = request.getParameter("submitParas");
             logger.error(str);
