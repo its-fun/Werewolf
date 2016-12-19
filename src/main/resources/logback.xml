@@ -3,7 +3,7 @@
 
 
     <appender name="ROOTLOGGER" class="ch.qos.logback.core.rolling.RollingFileAppender">
-        <file>/home/ec2-user/Weresolf/logs/root.log</file>
+        <file>/Users/huanghao/Weresolf/logs/root.log</file>
         <append>true</append>
         <rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
             <FileNamePattern>/Users/huanghao/Weresolf/logs/root.log.%d{yyyy-MM-dd}</FileNamePattern>

@@ -5,12 +5,9 @@ import chengzi.sessionContext.RoomContext;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.*;
 
-import javax.servlet.http.HttpServletRequest;
 import net.sf.json.JSONObject;
-import org.springframework.web.bind.annotation.ResponseBody;
 
 import java.util.HashMap;
 
@@ -24,21 +21,21 @@ public class CreateRoomController {
 
     @RequestMapping(value = "/pages/createRomeSubmit" ,method = RequestMethod.POST)
     @ResponseBody
-    public String createRoom(HttpServletRequest request){
+    public String createRoom(@RequestBody String str){
         try {
-            String str = request.getParameter("submitParas");
+            logger.error("RequestBody");
             logger.error(str);
             JSONObject jb= JSONObject.fromObject(str);
-            int langrenNum =(Integer)jb.get("langrenNum");
-            int yuyanjiaNum =(Integer)jb.get("yuyanjiaNum");
-            int cunminNum =(Integer)jb.get("cunminNum");
-            int nvwuNum =(Integer)jb.get("nvwuNum");
-            int lierenNum =(Integer)jb.get("lierenNum");
-            int shouweiNum =(Integer)jb.get("shouweiNum");
-            int baichiNum =(Integer)jb.get("baichiNum");
-            int daozeiNum =(Integer)jb.get("daozeiNum");
-            int qiubiteNum =(Integer)jb.get("qiubiteNum");
-            int yehaiziNum =(Integer)jb.get("yehaiziNum");
+            int langrenNum =Integer.parseInt((String) jb.get("langrenNum"));
+            int yuyanjiaNum =Integer.parseInt((String) jb.get("yuyanjiaNum"));
+            int cunminNum =Integer.parseInt((String)jb.get("cunminNum"));
+            int nvwuNum =Integer.parseInt((String)jb.get("nvwuNum"));
+            int lierenNum =Integer.parseInt((String)jb.get("lierenNum"));
+            int shouweiNum =Integer.parseInt((String)jb.get("shouweiNum"));
+            int baichiNum =Integer.parseInt((String)jb.get("baichiNum"));
+            int daozeiNum =Integer.parseInt((String)jb.get("daozeiNum"));
+            int qiubiteNum =Integer.parseInt((String)jb.get("qiubiteNum"));
+            int yehaiziNum =Integer.parseInt((String)jb.get("yehaiziNum"));
             logger.error("langrenNum :" + langrenNum + "; yuyanjiaNum : " + yuyanjiaNum + "; cunminNum : " + cunminNum
                     + "; nvwuNum : " + nvwuNum + "; lierenNum : " + lierenNum + "; shouweiNum : " + shouweiNum + "; baichiNum : "
                     + baichiNum + "; daozeiNum : " + daozeiNum + "; qiubiteNum : " + qiubiteNum + "; yehaiziNum : " + yehaiziNum);

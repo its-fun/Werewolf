@@ -1,5 +1,7 @@
 package chengzi.dataObject;
 
+import java.util.ArrayList;
+
 /**
  * Created by huanghao on 2016/12/18.
  */
@@ -18,6 +20,8 @@ public class RoomDO {
     private int qiubiteNum;
     private int yehaiziNum;
 
+    private ArrayList<Role> roles = null;
+
     public RoomDO(int langrenNum, int cunminNum, int yuyanjiaNum, int nvwuNum, int lierenNum, int shouweiNum,
              int baichiNum, int daozeiNum, int qiubiteNum, int yehaiziNum){
         synchronized (RoomDO.class){
@@ -34,6 +38,7 @@ public class RoomDO {
         this.daozeiNum = daozeiNum;
         this.qiubiteNum = qiubiteNum;
         this.yehaiziNum = yehaiziNum;
+        initRoles();
     }
 
     public RoomDO(){
@@ -41,6 +46,40 @@ public class RoomDO {
             incredRoomId ++;
         }
         this.roomId = incredRoomId;
+    }
+
+    private void initRoles(){
+        roles = new ArrayList<>();
+        for (int i=0;i<langrenNum;i++){
+            roles.add(new LangRen());
+        }
+        for (int i=0;i<cunminNum;i++){
+            roles.add(new CunMin());
+        }
+        for (int i=0;i<yuyanjiaNum;i++){
+            roles.add(new YuYanJia());
+        }
+        for (int i=0;i<nvwuNum;i++){
+            roles.add(new NvWu());
+        }
+//        for (int i=0;i<lierenNum;i++){
+//            roles.add(new LangRen());
+//        }
+//        for (int i=0;i<shouweiNum;i++){
+//            roles.add(new LangRen());
+//        }
+//        for (int i=0;i<baichiNum;i++){
+//            roles.add(new LangRen());
+//        }
+//        for (int i=0;i<daozeiNum;i++){
+//            roles.add(new LangRen());
+//        }
+//        for (int i=0;i<qiubiteNum;i++){
+//            roles.add(new LangRen());
+//        }
+//        for (int i=0;i<yehaiziNum;i++){
+//            roles.add(new LangRen());
+//        }
     }
 
     public int getRoomId() {

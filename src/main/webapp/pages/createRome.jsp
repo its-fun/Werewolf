@@ -106,14 +106,23 @@
     <script type="text/javascript">
         $(function(){
             $("#createRoomBtn").click(function(){
+                var langrenNum = $("input[name='langrenNum']").val();
+                var cunminNum = $("input[name='cunminNum']").val();
+                var yuyanjiaNum = $("input[name='yuyanjiaNum']").val();
+                var nvwuNum = $("input[name='nvwuNum']").val();
+                var lierenNum = $("input[name='lierenNum']").val();
+                var shouweiNum = $("input[name='shouweiNum']").val();
+                var baichiNum = $("input[name='baichiNum']").val();
+                var daozeiNum = $("input[name='daozeiNum']").val();
+                var qiubiteNum = $("input[name='qiubiteNum']").val();
+                var yehaiziNum = $("input[name='yehaiziNum']").val();
+
                 $.ajax({
                     url:"createRomeSubmit.do",
                     type:"post",
                     dataType:"json",
-                    data:'submitParas={"langrenNum":'+ $("input[name='langrenNum']").val() + ',"cunminNum":' + $("input[name='cunminNum']").val() + ',"yuyanjiaNum":' + $("input[name='yuyanjiaNum']").val()
-                    + ',"nvwuNum":' + $("input[name='nvwuNum']").val() + ',"lierenNum":' + $("input[name='lierenNum']").val()  + ',"shouweiNum":' + $("input[name='shouweiNum']").val() + ',"baichiNum":' + $("input[name='baichiNum']").val()
-                    + ',"daozeiNum":' + $("input[name='daozeiNum']").val() + ',"qiubiteNum":' + $("input[name='qiubiteNum']").val() + ',"yehaiziNum":' + $("input[name='yehaiziNum']").val() + '}',
-//                    contentType:'application/json;charset=UTF-8',
+                    contentType:'application/json;charset=UTF-8',
+                    data:JSON.stringify({'langrenNum':langrenNum,'cunminNum':cunminNum,'yuyanjiaNum':yuyanjiaNum,'nvwuNum':nvwuNum,'lierenNum':lierenNum,'shouweiNum':shouweiNum,'baichiNum':baichiNum,'daozeiNum':daozeiNum,'qiubiteNum':qiubiteNum,'yehaiziNum':yehaiziNum}),
                     success:function(data){
                         window.location="createRoomSuc.jsp"
                     },
