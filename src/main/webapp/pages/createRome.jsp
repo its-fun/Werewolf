@@ -110,11 +110,10 @@
                     url:"createRomeSubmit.do",
                     type:"post",
                     dataType:"json",
-//                    data:JSON.stringify($("createRoomForm").serializeArray()),
                     data:'submitParas={"langrenNum":'+ $("input[name='langrenNum']").val() + ',"cunminNum":' + $("input[name='cunminNum']").val() + ',"yuyanjiaNum":' + $("input[name='yuyanjiaNum']").val()
                     + ',"nvwuNum":' + $("input[name='nvwuNum']").val() + ',"lierenNum":' + $("input[name='lierenNum']").val()  + ',"shouweiNum":' + $("input[name='shouweiNum']").val() + ',"baichiNum":' + $("input[name='baichiNum']").val()
                     + ',"daozeiNum":' + $("input[name='daozeiNum']").val() + ',"qiubiteNum":' + $("input[name='qiubiteNum']").val() + ',"yehaiziNum":' + $("input[name='yehaiziNum']").val() + '}',
-//                    contentType:"application/json",
+                    contentType:'application/json;charset=UTF-8',
                     success:function(data){
                         alert(data);
                     },

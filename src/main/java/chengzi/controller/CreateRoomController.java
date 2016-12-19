@@ -11,7 +11,8 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import net.sf.json.JSONObject;
-import java.io.PrintWriter;
+import org.springframework.web.bind.annotation.ResponseBody;
+
 import java.util.HashMap;
 
 
@@ -23,6 +24,7 @@ public class CreateRoomController {
     private static final Logger logger= LoggerFactory.getLogger(CreateRoomController.class);
 
     @RequestMapping(value = "/pages/createRomeSubmit" ,method = RequestMethod.POST)
+    @ResponseBody
     public String createRoom(HttpServletRequest request, HttpServletResponse response){
         try {
             String str = request.getParameter("submitParas");
@@ -45,19 +47,10 @@ public class CreateRoomController {
             RoomContext.getInstance().addRoom(newRoom.getRoomId(), newRoom);
             logger.error(new Integer(RoomContext.getInstance().size()).toString());
 
-            response.setContentType("application/json");
-            response.setHeader("Pragma", "No-cache");
-            response.setHeader("Cache-Control", "no-cache");
-            response.setCharacterEncoding("UTF-8");
-            PrintWriter out= null;
-            out = response.getWriter();
-            out.print(JSONObject.fromObject(new HashMap<String,String>().put("success","true")).toString());
-            out.flush();
-            out.close();
         } catch (Exception e) {
             logger.error(e.toString());
         }
-        return "success";
+        return JSONObject.fromObject(new HashMap<String,String>().put("success","true")).toString();
     }
 
 }

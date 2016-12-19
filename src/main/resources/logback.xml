@@ -6,7 +6,7 @@
         <file>/home/ec2-user/Weresolf/logs/root.log</file>
         <append>true</append>
         <rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
-            <FileNamePattern>/home/ec2-user/Weresolf/logs/root.log.%d{yyyy-MM-dd}</FileNamePattern>
+            <FileNamePattern>/Users/huanghao/Weresolf/logs/root.log.%d{yyyy-MM-dd}</FileNamePattern>
             <MaxHistory>2</MaxHistory>
         </rollingPolicy>
         <encoder class="ch.qos.logback.classic.encoder.PatternLayoutEncoder">
