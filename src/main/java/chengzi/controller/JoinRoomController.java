@@ -24,7 +24,7 @@ import java.util.Map;
 public class JoinRoomController {
     private static final Logger logger= LoggerFactory.getLogger(CreateRoomController.class);
 
-    @RequestMapping(value = "/pages/createRomeSubmit" ,method = RequestMethod.POST, produces = "application/json;charset=UTF-8")
+    @RequestMapping(value = "/pages/joinRoomSubmit" ,method = RequestMethod.POST, produces = "application/json;charset=UTF-8")
     public @ResponseBody
     Map<String, String> createRoom(@RequestBody String str, HttpServletRequest request){
         Map<String, String> result = new HashMap<>();
