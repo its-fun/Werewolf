@@ -63,24 +63,24 @@ public class RoomDO implements Serializable{
         for (int i=0;i<nvwuNum;i++){
             roles.add(new NvWu());
         }
-//        for (int i=0;i<lierenNum;i++){
-//            roles.add(new LangRen());
-//        }
-//        for (int i=0;i<shouweiNum;i++){
-//            roles.add(new LangRen());
-//        }
-//        for (int i=0;i<baichiNum;i++){
-//            roles.add(new LangRen());
-//        }
-//        for (int i=0;i<daozeiNum;i++){
-//            roles.add(new LangRen());
-//        }
-//        for (int i=0;i<qiubiteNum;i++){
-//            roles.add(new LangRen());
-//        }
-//        for (int i=0;i<yehaiziNum;i++){
-//            roles.add(new LangRen());
-//        }
+        for (int i=0;i<lierenNum;i++){
+            roles.add(new LangRen());
+        }
+        for (int i=0;i<shouweiNum;i++){
+            roles.add(new LangRen());
+        }
+        for (int i=0;i<baichiNum;i++){
+            roles.add(new LangRen());
+        }
+        for (int i=0;i<daozeiNum;i++){
+            roles.add(new LangRen());
+        }
+        for (int i=0;i<qiubiteNum;i++){
+            roles.add(new LangRen());
+        }
+        for (int i=0;i<yehaiziNum;i++){
+            roles.add(new LangRen());
+        }
     }
 
     public int getRoomId() {
@@ -169,6 +169,19 @@ public class RoomDO implements Serializable{
 
     public void setYehaiziNum(int yehaiziNum) {
         this.yehaiziNum = yehaiziNum;
+    }
+
+    public Role getRondomRole(){
+        int total = roles.size();
+        if(total <= 0){
+            return null;
+        }
+        int rondom = (int) Math.random() * total;
+        Role result = roles.get(rondom);
+        synchronized (this){
+            roles.remove(rondom);
+        }
+        return result;
     }
 
 

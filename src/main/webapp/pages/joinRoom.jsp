@@ -23,11 +23,31 @@
             <h2 >请输入房间号码</h2>
         </div>
         <div class="upperDiv">
-            <input type="text" class="btn-block room" placeholder="" name="roomNum">
+            <input type="number" class="btn-block room" placeholder="" name="roomNum">
         </div>
         <div class="underDiv">
             <a href="playerPotal.jsp" type="button" class="btn btn-large btn-primary btn-block" >进入房间</a>
         </div>
         <script src="http://cdn.bootcss.com/jquery/1.11.1/jquery.min.js"></script>
+        <script type="text/javascript">
+            $(function(){
+                $("#createRoomBtn").click(function(){
+                    var roomNum = $("input[name='roomNum']").val();
+                    $.ajax({
+                        url:"joinRomeSubmit.do",
+                        type:"post",
+                        dataType:"json",
+                        contentType:'application/json;charset=UTF-8',
+                        data:JSON.stringify({'roomNum':roomNum}),
+                        success:function(data){
+                            window.location="playerPotal.jsp"
+                        },
+                        error:function(){
+                            alert("创建房间失败，请重新创建");
+                        }
+                    });
+                });
+            });
+        </script>
     </body>
 </html>

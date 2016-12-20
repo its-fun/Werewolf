@@ -36,11 +36,8 @@ public class RoomContext {
         }
     }
 
-    public RoomDO getLastRoom(){
-        if(roomDOs.isEmpty()){
-            return null;
-        }
-        return roomDOs.get(roomDOs.size() -1);
+    public RoomDO getRoom(int roomId){
+        return roomDOs.get(roomId);
     }
 
     public int size(){
