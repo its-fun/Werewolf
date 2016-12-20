@@ -5,10 +5,13 @@ import chengzi.sessionContext.RoomContext;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.*;
 
 import net.sf.json.JSONObject;
 
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpSession;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -22,9 +25,8 @@ public class CreateRoomController {
 
     @RequestMapping(value = "/pages/createRomeSubmit" ,method = RequestMethod.POST, produces = "application/json;charset=UTF-8")
     public @ResponseBody
-    Map<String, String> createRoom(@RequestBody String str){
+    Map<String, String> createRoom(@RequestBody String str, HttpServletRequest request){
         try {
-            logger.error("RequestBody");
             logger.error(str);
             JSONObject jb= JSONObject.fromObject(str);
             int langrenNum =Integer.parseInt((String) jb.get("langrenNum"));
@@ -42,7 +44,9 @@ public class CreateRoomController {
                     + baichiNum + "; daozeiNum : " + daozeiNum + "; qiubiteNum : " + qiubiteNum + "; yehaiziNum : " + yehaiziNum);
             RoomDO newRoom = new RoomDO(langrenNum,cunminNum,yuyanjiaNum,nvwuNum,lierenNum,shouweiNum,baichiNum,daozeiNum,qiubiteNum,yehaiziNum);
             RoomContext.getInstance().addRoom(newRoom.getRoomId(), newRoom);
-            logger.error(new Integer(RoomContext.getInstance().size()).toString());
+
+            HttpSession session = request.getSession();
+            session.setAttribute("roomNum", new Integer(newRoom.getRoomId()).toString());
 
         } catch (Exception e) {
             logger.error(e.toString());
@@ -50,6 +54,14 @@ public class CreateRoomController {
         Map<String, String> result = new HashMap<>();
         result.put("success","true");
         return result;
+    }
+
+    @RequestMapping(value = "/pages/createRoomSucPre" ,method = RequestMethod.GET)
+    public String createRoomSuc(ModelMap model, HttpServletRequest request){
+        logger.error((String)request.getSession().getAttribute("roomNum"));
+        model.addAttribute("roomNum", (String)request.getSession().getAttribute("roomNum"));
+        logger.error("CreateRoomSuccess current Room count : " + new Integer(RoomContext.getInstance().size()).toString());
+        return "redirect:createRoomSuc.jsp";
     }
 
 }

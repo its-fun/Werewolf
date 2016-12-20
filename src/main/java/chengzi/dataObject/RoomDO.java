@@ -1,11 +1,12 @@
 package chengzi.dataObject;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 
 /**
  * Created by huanghao on 2016/12/18.
  */
-public class RoomDO {
+public class RoomDO implements Serializable{
     private static int incredRoomId = 0;
 
     private int roomId;

@@ -1,3 +1,5 @@
+<%@ page pageEncoding="UTF-8" contentType="text/html; charset=UTF-8" %>
+<%@ page isELIgnored ="false" %>
 <!DOCTYPE html>
 <html>
 <head>
@@ -21,7 +23,7 @@
     <h2 >房间创建成功</h2>
 </div>
 <div class="upperDiv">
-    <p class="btn-block room">房间号码为：1</p>
+    <p class="btn-block room">房间号码为：${roomNum} </p>
     <p class="btn-block room">请邀请好友进入房间</p>
     <p class="btn-block room">所有玩家进入房间之后可以开始游戏</p>
 </div>

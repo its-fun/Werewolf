@@ -12,7 +12,7 @@ public class RoomContext {
     private static RoomContext roomContext = null;
 
     private RoomContext(){
-        roomDOs = new HashMap<Integer,RoomDO>();
+        roomDOs = new HashMap<>();
     }
 
     public static RoomContext getInstance(){
@@ -34,6 +34,13 @@ public class RoomContext {
         synchronized (RoomContext.class){
             roomDOs.remove(roomId);
         }
+    }
+
+    public RoomDO getLastRoom(){
+        if(roomDOs.isEmpty()){
+            return null;
+        }
+        return roomDOs.get(roomDOs.size() -1);
     }
 
     public int size(){

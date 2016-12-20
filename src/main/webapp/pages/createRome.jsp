@@ -1,3 +1,5 @@
+<%@ page pageEncoding="UTF-8" contentType="text/html; charset=UTF-8" %>
+<%@ page isELIgnored="false" %>
 <!DOCTYPE html>
 <html>
 <head>
@@ -124,7 +126,7 @@
                     contentType:'application/json;charset=UTF-8',
                     data:JSON.stringify({'langrenNum':langrenNum,'cunminNum':cunminNum,'yuyanjiaNum':yuyanjiaNum,'nvwuNum':nvwuNum,'lierenNum':lierenNum,'shouweiNum':shouweiNum,'baichiNum':baichiNum,'daozeiNum':daozeiNum,'qiubiteNum':qiubiteNum,'yehaiziNum':yehaiziNum}),
                     success:function(data){
-                        window.location="createRoomSuc.jsp"
+                        window.location="createRoomSucPre.do"
                     },
                     error:function(){
                         alert("创建房间失败，请重新创建");
