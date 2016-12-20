@@ -10,6 +10,7 @@ import org.springframework.web.bind.annotation.*;
 import net.sf.json.JSONObject;
 
 import java.util.HashMap;
+import java.util.Map;
 
 
 /**
@@ -19,9 +20,9 @@ import java.util.HashMap;
 public class CreateRoomController {
     private static final Logger logger= LoggerFactory.getLogger(CreateRoomController.class);
 
-    @RequestMapping(value = "/pages/createRomeSubmit" ,method = RequestMethod.POST)
-    @ResponseBody
-    public String createRoom(@RequestBody String str){
+    @RequestMapping(value = "/pages/createRomeSubmit" ,method = RequestMethod.POST, produces = "application/json;charset=UTF-8")
+    public @ResponseBody
+    Map<String, String> createRoom(@RequestBody String str){
         try {
             logger.error("RequestBody");
             logger.error(str);
@@ -46,7 +47,9 @@ public class CreateRoomController {
         } catch (Exception e) {
             logger.error(e.toString());
         }
-        return JSONObject.fromObject(new HashMap<String,String>().put("success","true")).toString();
+        Map<String, String> result = new HashMap<>();
+        result.put("success","true");
+        return result;
     }
 
 }
